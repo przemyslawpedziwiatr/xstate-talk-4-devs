@@ -1,0 +1,29 @@
+@import './base.css';
+
+body {
+  display: flex;
+  place-items: baseline;
+}  
+  
+#app {
+  font-weight: normal;
+  display: flex;
+  width: 100%;
+}
+
+a {
+  background: rgb(212, 212, 212);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+a,
+.green {
+  color: black;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: #eee;
+  }
+}
