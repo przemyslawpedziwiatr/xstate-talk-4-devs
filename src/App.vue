@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <h2>FactoryAdmin 1.0</h2>
         <div class="nav-button">
           <!-- <RouterLink [routerLink]="'state-transition'">Pump baloon</button> -->
-          <RouterLink to="/test">Pump baloon</RouterLink>
+          <RouterLink to="/pipe-oil-flow">Manage pipe oil flow</RouterLink>
           <p>State</p>
           <p>Transition</p>  
           <p>Atomic state</p>  
@@ -18,7 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Pump baloon</RouterLink>
+          <RouterLink to="/barrel-placement">Barrel placement</RouterLink>
           <!-- <button [routerLink]="'context'">Pump with value</button> -->
           <p>Context</p>
           <p>Compound State</p>
@@ -27,7 +27,7 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Pump baloon</RouterLink>
+          <RouterLink to="/">Barrel fill up and labeling</RouterLink>
           <!-- <button [routerLink]="'guard-delay'">SMART pumping</button> -->
           <p>Guard</p>
           <p>Delays</p>  
@@ -35,19 +35,19 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Pump baloon</RouterLink>
+          <RouterLink to="/">Barrel fill up management</RouterLink>
           <!-- <button [routerLink]="'always'">Reality based pumping</button> -->
           <p>Always state</p>
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Pump baloon</RouterLink>
+          <RouterLink to="/">Barrel coding and supply</RouterLink>
           <!-- <button [routerLink]="'services'">API based baloons</button> -->
           <p>Services</p>
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Pump baloon</RouterLink>
+          <RouterLink to="/">Multiple flows management</RouterLink>
           <!-- <button [routerLink]="'actor'">PUMPINATOR 3000</button> -->
           <p>Actors</p>  
         </div>
