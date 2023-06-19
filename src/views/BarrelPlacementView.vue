@@ -9,7 +9,9 @@
       </div>
       <div class="arm">
         <img src="@/assets/arm_l.png" v-if="state.value.Arm === 'Picking Up Barrel'"/>
-        <img src="@/assets/arm_m.png" v-if="state.value === 'Idle' || state.value.Arm === 'Waiting'"/>
+        <img src="@/assets/arm_m.png" 
+          :style="{ opacity: state.value === 'Idle' ? 0.5 : 1 }"
+          v-if="state.value === 'Idle' || state.value.Arm === 'Waiting'"/>
         <img src="@/assets/arm_r.png" v-if="state.value.Arm === 'Barrel In Truck'"/>
       </div>
       <div class="truck">
@@ -23,10 +25,14 @@
       </div>
     </div>
     <div class="actions">
-      <button @click="send('TURN_ARM_ON')">Turn Arm ON</button>
-      <button @click="send('PICK_UP')">Pick Up Barrel</button>
-      <button @click="send('PUT_IN_TRUCK')">Put Barrel</button>
-      <button @click="send('FINISH')">Finish</button>
+      <button v-if="state.value === 'Idle'"
+        @click="send('TURN_ARM_ON')">Turn Arm ON</button>
+      <button :disabled="state.value === 'Idle'" 
+        @click="send('PICK_UP')">Pick Up Barrel</button>
+      <button :disabled="state.value === 'Idle'" 
+        @click="send('PUT_IN_TRUCK')">Put Barrel</button>
+      <button :disabled="state.value === 'Idle'" 
+        @click="send('FINISH')">Finish</button>
     </div>
   </div>
 </template>

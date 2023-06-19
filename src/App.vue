@@ -8,7 +8,6 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav class="navigation">
         <h2>FactoryAdmin 1.0</h2>
         <div class="nav-button">
-          <!-- <RouterLink [routerLink]="'state-transition'">Pump baloon</button> -->
           <RouterLink to="/pipe-oil-flow">Manage pipe oil flow</RouterLink>
           <p>State</p>
           <p>Transition</p>  
@@ -19,7 +18,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
         <div class="nav-button">
           <RouterLink to="/barrel-placement">Barrel placement</RouterLink>
-          <!-- <button [routerLink]="'context'">Pump with value</button> -->
           <p>Context</p>
           <p>Compound State</p>
           <p>Self Transition</p>
@@ -27,28 +25,24 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Barrel fill up and labeling</RouterLink>
-          <!-- <button [routerLink]="'guard-delay'">SMART pumping</button> -->
+          <RouterLink to="/fill-up-labeling">Barrel fill up and labeling</RouterLink>
           <p>Guard</p>
           <p>Delays</p>  
           <p>Parallel State</p>  
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Barrel fill up management</RouterLink>
-          <!-- <button [routerLink]="'always'">Reality based pumping</button> -->
+          <RouterLink to="/fill-up-management">Barrel fill up management</RouterLink>
           <p>Always state</p>
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Barrel coding and supply</RouterLink>
-          <!-- <button [routerLink]="'services'">API based baloons</button> -->
+          <RouterLink to="/coding-supply">Barrel coding and supply</RouterLink>
           <p>Services</p>
         </div>
 
         <div class="nav-button">
-          <RouterLink to="/">Multiple flows management</RouterLink>
-          <!-- <button [routerLink]="'actor'">PUMPINATOR 3000</button> -->
+          <RouterLink to="/multiple-flows">Multiple flows management</RouterLink>
           <p>Actors</p>  
         </div>
       </nav>

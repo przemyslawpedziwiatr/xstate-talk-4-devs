@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/barrel-placement',
       name: 'pipe-placement',
       component: () => import('../views/BarrelPlacementView.vue')
+    },
+    {
+      path: '/fill-up-labeling',
+      name: 'fill-up-labeling',
+      component: () => import('../views/BarrelFillUpLabelingView.vue')
     }
   ]
 })
