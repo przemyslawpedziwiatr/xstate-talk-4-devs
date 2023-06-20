@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/fill-up-labeling',
       name: 'fill-up-labeling',
       component: () => import('../views/BarrelFillUpLabelingView.vue')
+    },
+    {
+      path: '/multiple-flows',
+      name: 'multiple-flows',
+      component: () => import('../views/MultipleFlowView.vue')
     }
   ]
 })

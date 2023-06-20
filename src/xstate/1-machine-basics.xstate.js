@@ -16,7 +16,6 @@ export const barrelPipeOilFlowMachine = createMachine({
                 CLOSE_VALVE: "Full Barrel"
             }
         },
-
         "Full Barrel": {
             // type: 'final',
             on: {

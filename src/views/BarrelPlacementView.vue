@@ -2,7 +2,7 @@
   <div class="barrel-placement-wrapper">
     <div class="main">
       <div class="barrels" >
-        <img v-for="(barrel, index) in barrelsAvailable" 
+        <img v-for="(barrel, index) in barrelsAvailable" v-bind:key="index"
           src="@/assets/barrel_mini.png"
           :style="{ left: `${index*10 + 10}px` }"
           />
@@ -16,7 +16,7 @@
       </div>
       <div class="truck">
         <div class="barrels-truck" >
-          <img v-for="(barrel, index) in state.context.barrelsLoaded" 
+          <img v-for="(barrel, index) in state.context.barrelsLoaded" v-bind:key="index"
             src="@/assets/barrel_mini.png"
             :style="{ left: `${index*25 + 20}px` }"
             />

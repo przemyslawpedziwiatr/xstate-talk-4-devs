@@ -29,15 +29,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <p>Guard</p>
           <p>Delays</p>  
           <p>Parallel State</p>  
-        </div>
-
-        <div class="nav-button">
-          <RouterLink to="/fill-up-management">Barrel fill up management</RouterLink>
           <p>Always state</p>
-        </div>
-
-        <div class="nav-button">
-          <RouterLink to="/coding-supply">Barrel coding and supply</RouterLink>
           <p>Services</p>
         </div>
 
