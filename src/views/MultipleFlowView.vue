@@ -41,8 +41,7 @@ export default {
   computed: {
     actors() {
       if (this.state && this.state.children) {
-        return Object.keys(this.state.children).map(childKey =>
-          useActor(this.state.children[childKey]));
+        return Object.keys(this.state.children).map(childKey => useActor(this.state.children[childKey]));
       }
       return [];
     },
@@ -56,10 +55,6 @@ export default {
 </script>
 
 <style scoped>
-.solution-wrapper {
-  display: flex;
-  flex-direction: row;
-}
 
 .barrel-oil-flow-wrapper {
   display: flex;
@@ -113,29 +108,6 @@ export default {
   font-size: 32px;
 }
 
-.labeling-wrapper {
-  margin-left: 2rem;
-  display: block;
-  flex-direction: row;
-  align-self: center;
-  place-self: center;
-  justify-self: center;
-  position: relative;
-}
-
-.barrel {
-  width: 132px;
-  height: 211px;
-}
-
-.labeling-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  margin-left: 1rem;
-}
-
 input {
   position: absolute;
   bottom: 95px;
@@ -153,15 +125,4 @@ input {
   font-size: 14px;
 }
 
-.info {
-  align-self: center;
-  /* justify-self: center; */
-  margin-left: 2rem;
-  font-weight: bold;
-  display: block;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 10px;
-  border: 2px solid #444;
-}
 </style>

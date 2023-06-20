@@ -25,14 +25,10 @@
       </div>
     </div>
     <div class="actions">
-      <button v-if="state.value === 'Idle'"
-        @click="send('TURN_ARM_ON')">Turn Arm ON</button>
-      <button :disabled="state.value === 'Idle'" 
-        @click="send('PICK_UP')">Pick Up Barrel</button>
-      <button :disabled="state.value === 'Idle'" 
-        @click="send('PUT_IN_TRUCK')">Put Barrel</button>
-      <button :disabled="state.value === 'Idle'" 
-        @click="send('FINISH')">Finish</button>
+      <button v-if="state.value === 'Idle'" @click="send('TURN_ARM_ON')">Turn Arm ON</button>
+      <button :disabled="state.value === 'Idle'" @click="send('PICK_UP')">Pick Up Barrel</button>
+      <button :disabled="state.value === 'Idle'" @click="send('PUT_IN_TRUCK')">Put Barrel</button>
+      <button :disabled="state.value === 'Idle'" @click="send('FINISH')">Finish</button>
     </div>
   </div>
 </template>
