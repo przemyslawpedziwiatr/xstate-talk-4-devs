@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref } from 'vue'
 import { assign, createMachine } from 'xstate'
 import { send } from 'xstate/lib/actions'
 import { fakeBackendCall } from '../api/fake-backend'
@@ -11,7 +11,7 @@ export const parallelLabelingMachine = createMachine(
     initial: 'Start',
     context: {
       barrelsAvailable: 0,
-      barrelsSent: 0,
+      barrelsSent: 0
     },
     states: {
       Start: {
@@ -25,10 +25,62 @@ export const parallelLabelingMachine = createMachine(
         type: 'parallel',
         states: {
           Barrel: {
+            initial: 'Empty',
+            states: {
+              Empty: {
+                on: {
+                  OPEN_VALVE: 'Filling Up'
+                }
+              },
+              'Filling Up': {
+                after: {
+                  1000: 'Full'
+                }
+              },
 
+              Full: {
+                on: {
+                  TRANSFER: {
+                    actions: ['increaseBarrelAmount'],
+                    target: 'Empty'
+                  }
+                }
+              }
+            }
           },
           Labeling: {
-
+            initial: 'Idle',
+            states: {
+              Idle: {
+                always: {
+                  cond: 'isBarrelAvailable',
+                  target: 'Stamp Input'
+                }
+              },
+              'Stamp Input': {
+                on: {
+                  STAMP: {
+                    target: 'Ready To Transport'
+                  }
+                }
+              },
+              'Ready To Transport': {
+                on: {
+                  TRANSPORT: {
+                    target: 'In Transport'
+                  }
+                }
+              },
+              'In Transport': {
+                invoke: {
+                  src: 'transportBarrelToTruckApi',
+                  onDone: {
+                    target: 'Idle',
+                    actions: ['decreaseBarrelAmount', 'clearStampLabel']
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -47,8 +99,7 @@ export const parallelLabelingMachine = createMachine(
       isBarrelAvailable: (context) => context.barrelsAvailable > 0
     },
     services: {
-      // TODO Implement
-      transportBarrelToTruckApi: () => null
+      transportBarrelToTruckApi: () => fakeBackendCall()
     }
   }
 )

@@ -43,7 +43,22 @@ export const multiplePipesMachine = createMachine(
       states: {
         Idle: {
           on: {
-            
+            OPEN_VALVES: {
+              target: 'Opened',
+              actions: 'sendOpenToAll',
+            },
+            ADD_ACTOR: {
+              target: 'Idle',
+              actions: ['addActor']
+            },
+            TRANSPORT_BARRELS: {
+                target: 'Idle',
+                actions: 'sendTransportBarrelsToAll'
+            },
+            BARREL_TRANSPORTED: {
+                actions: 'increaseTransportedBarrels',
+                target: 'Idle'
+            }
           },
         },
         Opened: {
@@ -57,16 +72,18 @@ export const multiplePipesMachine = createMachine(
       actions: {
         addActor: assign((context) => {
           return {
-            // TODO
+            actors: [...context.actors, spawn(barrelPipeOilFlowMachine)],
           };
         }),
         sendOpenToAll: pure((context) => {
-          // TODO
-          return {}
+          return context.actors.map((actorRef) => {
+            return sendTo( actorRef, { type: 'OPEN_VALVE'});
+          });
         }),
         sendTransportBarrelsToAll: pure((context) => {
-          // TODO
-          return [];
+            return context.actors.map((actorRef) => {
+              return sendTo( actorRef, { type: 'TRANSPORT_BARREL'});
+            });
           }),
         increaseTransportedBarrels: assign((context) => ({
             barrelsTransported: context.barrelsTransported + 1   

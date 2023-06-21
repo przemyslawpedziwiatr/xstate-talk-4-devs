@@ -10,10 +10,10 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="nav-button">
           <RouterLink to="/pipe-oil-flow">Manage pipe oil flow</RouterLink>
           <p>State</p>
-          <p>Transition</p>  
-          <p>Atomic state</p>  
-          <p>Initial state</p>  
-          <p>Final state</p>  
+          <p>Transition</p>
+          <p>Atomic state</p>
+          <p>Initial state</p>
+          <p>Final state</p>
         </div>
 
         <div class="nav-button">
@@ -27,18 +27,18 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="nav-button">
           <RouterLink to="/fill-up-labeling">Barrel fill up and labeling</RouterLink>
           <p>Guard</p>
-          <p>Delays</p>  
-          <p>Parallel State</p>  
+          <p>Delays</p>
+          <p>Parallel State</p>
           <p>Always state</p>
           <p>Services</p>
         </div>
 
         <div class="nav-button">
           <RouterLink to="/multiple-flows">Multiple flows management</RouterLink>
-          <p>Actors</p>  
+          <p>Actors</p>
         </div>
       </nav>
-      </div>
+    </div>
   </header>
 
   <div class="router">
@@ -92,47 +92,43 @@ nav {
   margin-left: -1rem;
   font-size: 1rem;
 
-  padding: 1rem 0;
-  margin-top: 1rem;
+  background: #393939;
+  flex-basis: 20%;
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 
 .wrapper {
-    display: flex;
+  display: flex;
 }
 
 h2 {
-    color: white;
-    font-weight: bold;
-    font-family: monospace;
-    margin: 0 0 1rem 0;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #eee;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+  margin: 0 0 1rem 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #eee;
 }
 
-nav {
-    background: #393939;
-    flex-basis: 20%;
-    padding: 1rem;
-    height: auto;
-    margin: 0 0 1rem;
-}
 
 .nav-button {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .nav-button p {
-    margin: 0.25rem 0 0 0.5rem;
-    color: white;
-    text-transform: uppercase;
-    font-family: sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+  margin: 0.25rem 0 0 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .nav-button p:first-of-type {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .nav-button a {
@@ -144,5 +140,4 @@ nav {
   font-size: 13px;
   box-shadow: 0 3px 0 #a3a3a3;
 }
-
 </style>

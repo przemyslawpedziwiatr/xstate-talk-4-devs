@@ -6,22 +6,22 @@ const router = createRouter({
     {
       path: '/pipe-oil-flow',
       name: 'pipe-oil-flow',
-      component: () => import('../views/BarrelPipeOilFlowView.vue')
+      component: () => import('../views/1-BarrelPipeOilFlowView.vue')
     },
     {
       path: '/barrel-placement',
       name: 'pipe-placement',
-      component: () => import('../views/BarrelPlacementView.vue')
+      component: () => import('../views/2-BarrelPlacementView.vue')
     },
     {
       path: '/fill-up-labeling',
       name: 'fill-up-labeling',
-      component: () => import('../views/BarrelFillUpLabelingView.vue')
+      component: () => import('../views/3-BarrelFillUpLabelingView.vue')
     },
     {
       path: '/multiple-flows',
       name: 'multiple-flows',
-      component: () => import('../views/MultipleFlowView.vue')
+      component: () => import('../views/4-MultipleFlowView.vue')
     }
   ]
 })

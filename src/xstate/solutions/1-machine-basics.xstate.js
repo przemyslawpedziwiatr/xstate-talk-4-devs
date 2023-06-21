@@ -5,6 +5,22 @@ export const barrelPipeOilFlowMachine = createMachine({
     id: 'barrelPipeOilFlow',
     initial: 'Empty',
     states: {
-        
+        Empty: {
+            on: {
+                OPEN_VALVE: "Barrel Filling Up"
+            }
+        },
+        "Barrel Filling Up": {
+            on: {
+                REMOVE_OIL: "Empty",
+                CLOSE_VALVE: "Full Barrel"
+            }
+        },
+        "Full Barrel": {
+            // type: 'final',
+            on: {
+                REMOVE_OIL: "Empty"
+            }
+        }
     },
 })

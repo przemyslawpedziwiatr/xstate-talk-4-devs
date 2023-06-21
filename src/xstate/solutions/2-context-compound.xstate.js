@@ -1,9 +1,8 @@
 import { createMachine, assign } from "xstate";
 
-export const carryArmMachine = createMachine({
-    /** @xstate-layout N4IgpgJg5mDOIC5QGMCGAndBPAgugtgLKrIAWAlgHZgB0AkhADZgDEAKgKoBKAcgPo4uhPgHkeAbQAMAXUSgADgHtY5AC7lFlOSAAeiALQBOAGw1DhgIwB2SVYuGAzABZjADgBMTgDQgsBiwCskjSurhbGTg4WTvaGku4Avgk+aJi4BMRkVLR4+DQA6qhqVFAsAAp0AMIA0nwcZVKySCBKKuqa2noI7uY0DoZ2Ae5WDpKSMQM+fggWFq4hkY7xTu4BVsMWSSkY2LmZFNQ0uTRl5MgA1iUABBzyVwBCO2CM5RxsfHT8bFwcNY3arWKHWaXR67j6VkhVjiATiHgCU0QkVMNlc42cNkMLmcWxAqV2GRIBxyBBoj0wzyudEoVzY6AArhdylVavV-s1Ae0tCDELMaMYAq4nGiAsZbJJzMYLIiEDEHDQRoELLZQu53JIHLj8ekiETskdSeT0JTqbSGUyAGKfOgAZQAEuyFMogdzQF1rAEaGNVtDXIKXOMEb5EFZjKYBkEomH4sZIUlkiBKIoIHBtNq9nrqADnVzOgZVvMsRZ+mGbE4sUKZfp3A55rXwm5IQEnJJi1qdjr9vqGMxs20NK7dPnlWY5SZY+MK95gwh9FF+aGfWtoQMHKH22kM1lDrk+y687OHKZnEqsf0emNp9MLArla2LGqNZDJAEAhuCbrtyS8oVipQoHuuY8ggvQCg47gCuW9hBK4hgyrBNDuHer7rOMxgOGs76dpm34nGclz-jcdxGs8gEDgeozgqEyqGBBKzekG0zgZ6ViuKWr4CkM5hvgm6aEl+Bp5CRjBUjSdKMucZHAm6iDuGit4PmuEE1v00ozsYPQ0LCTiKh49gSk4WFbsSNAADKKKgEDXBaVDkLApCQFJg5dFEhheusLathEtiGK4MrQlYiEaeKxZIbBhnxkAA */
-    id: 'carryArmMachine',
-
+export const contextCompoundMachine = createMachine({
+    /** @xstate-layout N4IgpgJg5mDOIC5QGMD2A7ALmAHpgwqgLYAOqAruhALICGyAFgJbpgB0AkhADZgDEAFQCqAJQByAfQCCI6hIDyYgNoAGALqJQZWE0xMMmkDkQBGAEwBWNgBYAnPYAcFlQHYAzO5fW3AGhABPRAcTNmcVFRMVexcVCwA2WziAXyS-NCxcAmIyShp6ZlY2KQAnIjYAdVpdFig+AAUOfABpCSE61Q0kEG1qgy7jBDcLFzYnEwt7WxcTJzNrFz9AhGtzUPDYiws3OLcTdwsUtIxsPEJSCio6RhZ2ErK6pmQAaxqAAiESV4AhWmLisG49SEAgkHEkAhEQmaHUMPT0fVAAzscRstl2ZjM5gsDlsFmsi0Q8RCYziFjMLlsKjcZiihxA6ROWXOuSuBVupTYPz+ANeHHQrwExXIz3qjRabRhXTh+nQhgGcRUDjY4RWDgpQ3MHgJCDiq2sDksFhMCRNtgcdIZmTOOUu+RuRQ5XP+3F5-MFwqefAAYmCOABlAASkq0qB08Nl-UQZgcKlGCTMuziDjsMy22vVbDcON2KhpJLcKVSIHQqAgcEMltO2QueWurFhod6EcRiAAtHtRtGTNYzHEElE4hjfAE21ZJma4i44vq1W5rMki5WmTba2zODwwA2wzK5Yge9qDcr1tsXJsVH33Bbjlbqyy7YU7lum7vBrG9qn3G4olSXL-tdSrHWXMVm8XtsSvDIq2ZW063ZMpKmqdAoCfcMXzmNw2FsMxElxUlXBMOdhyWFYMKA4JsNA6YIMZa0a1Ze07jYB5njeD5vl+Z0UJ3SMEDxEJ5yiWx9V7XY0W1HszDYQdnCnGNFXcExqJvaDVwYx0OJ5PkBSFZ4uIRIxEBcJV3ycT9vw8BxtWGEZe2sKITHMOwhgORdrygld6MKAAZVBaAgN4vRYJhYAYSA9ObAzllJUJ3DRLZu3PQc4nTLC2AIuLzCTXFvELJIgA */
+    id: 'contextCompoundMachine',
     context: {
         howManyBarrels: 4,
         barrelsLoaded: 0
@@ -37,13 +36,11 @@ export const carryArmMachine = createMachine({
                         PICK_UP: {
                             target: "Picking Up Barrel",
                         },
-
-                        FINISH: "#carryArmMachine.Loading Finished"
+                        FINISH: "#contextCompoundMachine.Loading Finished"
                     }
                 }
             }
         },
-
         "Loading Finished": {
             type: "final"
         }
